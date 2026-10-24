@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f7fb">
+<title>高中基础知识检测 · 学科闯关</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#6d7890;--line:#e4e9f2;--blue:#4263eb;--blue2:#edf1ff;--green:#18865b;--greenbg:#e8f7ef;--red:#c43d4b;--redbg:#fff0f1;--gold:#a76a0b;--goldbg:#fff5df;--shadow:0 12px 34px rgba(35,53,88,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.6}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #9aabff;outline-offset:2px}.wrap{max-width:900px;margin:auto;padding:24px 18px calc(32px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:20px;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:14px;background:#e9edff;display:grid;place-items:center;font-size:23px}.tag{font-size:12px;color:var(--blue);background:var(--blue2);padding:6px 10px;border-radius:99px;font-weight:700}.hero{padding:26px 26px 24px;border-radius:25px;background:linear-gradient(135deg,#e9efff,#f8faff 68%,#eaf8f4);margin-bottom:18px}.eyebrow{font-size:12px;letter-spacing:1.5px;color:var(--blue);font-weight:800}.hero h1{font-size:clamp(27px,5vw,39px);line-height:1.2;margin:10px 0}.hero p{color:#5d6880;margin:0;max-width:650px}.panel,.quiz-card,.result-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}.section-title{font-size:18px;font-weight:800;margin:0 0 5px}.sub{font-size:13px;color:var(--muted);margin:0 0 16px}.subjects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.subject-card{border:1px solid var(--line);border-radius:18px;padding:17px 14px;text-align:left;background:#fff;transition:.15s;min-height:140px}.subject-card:hover{transform:translateY(-2px);border-color:#aab8ff}.subject-card.selected{border:2px solid var(--blue);background:#f6f7ff;padding:16px 13px}.subject-card .emoji{font-size:27px;display:block;margin-bottom:7px}.subject strong{display:block;font-size:17px}.subject small{display:block;color:var(--muted);font-size:12px;margin-top:4px}.controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px;flex-wrap:wrap}.countset{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.countset span{font-size:13px;color:var(--muted);font-weight:700}.countbtn{padding:8px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:#45516b}.countbtn.active{background:var(--blue2);color:var(--blue);border-color:#bac6ff;font-weight:800}.primary{border:0;background:var(--blue);color:#fff;padding:12px 21px;border-radius:14px;font-weight:800;box-shadow:0 5px 12px #4263eb2b}.primary:disabled{opacity:.45;cursor:not-allowed}.secondary{border:1px solid var(--line);background:#fff;color:#35415a;padding:10px 16px;border-radius:13px;font-weight:700}.note{margin-top:14px;color:var(--muted);font-size:12px}.hidden{display:none!important}.quiz-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}.back{border:0;background:transparent;color:var(--muted);padding:4px 0;font-weight:700}.progress-text{font-size:13px;color:var(--muted);font-weight:700}.track{height:7px;background:#e9edf5;border-radius:99px;overflow:hidden;margin-bottom:19px}.fill{height:100%;width:0;background:var(--blue);border-radius:99px;transition:width .2s}.qmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px}.pill{font-size:12px;font-weight:800;border-radius:99px;padding:5px 9px;background:#eef1f7;color:#59657b}.pill.subject-card{background:var(--blue2);color:var(--blue)}.question{font-size:clamp(20px,3.8vw,26px);font-weight:800;line-height:1.48;margin:0 0 20px;white-space:pre-line}.options{display:grid;grid-template-columns:1fr 1fr;gap:11px}.option{display:flex;align-items:flex-start;gap:11px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px 13px;color:var(--ink);min-height:65px}.letter{flex:0 0 27px;height:27px;border-radius:9px;background:#f0f3f9;color:#536079;display:grid;place-items:center;font-weight:800;font-size:13px}.option.chosen{border:2px solid var(--blue);background:#f6f7ff;padding:13px 12px}.option.chosen .letter{background:var(--blue);color:#fff}.option.correct{border:2px solid var(--green);background:var(--greenbg);padding:13px 12px}.option.correct .letter{background:var(--green);color:#fff}.option.wrong{border:2px solid var(--red);background:var(--redbg);padding:13px 12px}.option.wrong .letter{background:var(--red);color:#fff}.option:disabled{cursor:default}.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}.feedback{margin-top:18px;border-radius:17px;padding:17px 18px;border:1px solid var(--line);background:#fafbfe}.feedback.good{background:var(--greenbg);border-color:#c6ecd8}.feedback.bad{background:var(--redbg);border-color:#ffd4d9}.feedback h3{font-size:16px;margin:0 0 8px}.feedback p{margin:6px 0;font-size:14px}.feedback .label{font-weight:800}.explain-title{margin-top:14px!important}.analysis-grid{display:grid;gap:8px;margin-top:8px}.analysis-item{font-size:13px;background:#ffffffb8;padding:9px 11px;border-radius:10px}.analysis-item b{margin-right:4px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.stat{padding:15px 10px;background:#f7f8fc;border-radius:15px;text-align:center}.stat strong{font-size:26px;display:block}.stat span{font-size:12px;color:var(--muted)}.review-list{display:grid;gap:10px;margin-top:14px}.review-item{border:1px solid var(--line);border-radius:15px;padding:14px}.review-item h4{margin:0 0 7px;font-size:15px}.review-item p{margin:5px 0;font-size:13px;color:#536079}.review-item .ans{color:var(--green);font-weight:800}.empty{padding:16px;background:var(--greenbg);border-radius:14px;color:#176a4a}.footer{text-align:center;color:#8a94a8;font-size:11px;margin-top:20px}
+@media(max-width:600px){.wrap{padding:15px 13px calc(24px + env(safe-area-inset-bottom))}.hero{padding:22px 19px;border-radius:21px}.panel,.quiz-card,.result-card{padding:17px;border-radius:19px}.subjects{grid-template-columns:1fr;gap:9px}.subject-card{min-height:0;display:grid;grid-template-columns:40px 1fr;align-items:center;padding:12px 13px}.subject-card.selected{padding:11px 12px}.subject-card .emoji{grid-row:span 2;margin:0;font-size:25px}.subject small{margin-top:0}.controls{align-items:stretch}.controls .primary{width:100%}.options{grid-template-columns:1fr;gap:9px}.option{min-height:57px;padding:12px}.option.chosen,.option.correct,.option.wrong{padding:11px}.question{margin-bottom:17px}.stats{gap:7px}.stat strong{font-size:22px}.actions .primary,.actions .secondary{flex:1}.brand{font-size:18px}.tag{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="brand"><div class="logo">📚</div><span>高中基础知识检测</span></div><span class="tag">高二 · 基础巩固</span></header>
+  <main id="home">
+    <section class="hero"><div class="eyebrow">LEARN · PRACTICE · REVIEW</div><h1>把基础知识，<br>练成真正的掌握。</h1><p>按学科分类闯关。每道题都有知识点说明；答错后会展开详细解析，帮助你弄懂原因，而不只是记住答案。</p></section>
+    <section class="panel">
+      <h2 class="section-title">选择检测学科</h2><p class="sub">每次检测选择一个学科，题目从基础知识点题库中抽取。</p>
+      <div class="subjects" id="subjects">
+        <button class="subject-card selected" data-subject="地理"><span class="emoji">🌏</span><strong>地理</strong><small>自然、人文与区域地理</small></button>
+        <button class="subject-card" data-subject="历史"><span class="emoji">🏛️</span><strong>历史</strong><small>中国史与世界史基础</small></button>
+        <button class="subject-card" data-subject="生物"><span class="emoji">🧬</span><strong>生物</strong><small>细胞、遗传与生态等</small></button>
+      </div>
+      <div class="controls"><div class="countset"><span>题目数量</span><button class="countbtn active" data-count="5">5题</button><button class="countbtn" data-count="10">10题</button><button class="countbtn" data-count="all">全部题目</button></div><button class="primary" id="start">开始检测　→</button></div>
+      <p class="note">说明：题库为基础知识练习示例，具体教材版本和学校进度可能不同。建议结合课堂教材复习。</p>
+    </section>
+  </main>
+  <main id="quiz" class="hidden">
+    <div class="quiz-head"><button class="back" id="quit">← 返回选科</button><span class="progress-text" id="progressText">第 1 / 5 题</span></div>
+    <div class="track"><div class="fill" id="progressFill"></div></div>
+    <section class="quiz-card">
+      <div class="qmeta"><span class="pill subject" id="subjectPill">地理</span><span class="pill" id="topicPill">自然地理</span><span class="pill" id="answeredPill">待作答</span></div>
+      <h2 class="question" id="questionText"></h2>
+      <div class="options" id="options"></div>
+      <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+      <div class="actions"><button class="secondary" id="skip">暂时跳过</button><button class="primary" id="submit" disabled>确认答案</button><button class="primary hidden" id="next">下一题 →</button></div>
+    </section>
+  </main>
+  <main id="result" class="hidden">
+    <section class="result-card">
+      <div class="eyebrow">PRACTICE COMPLETE</div><h1 style="margin:7px 0 0;font-size:30px">本次检测完成</h1><p class="sub" id="resultSubtitle" style="margin-top:6px"></p>
+      <div class="stats"><div class="stat"><strong id="scoreStat">0</strong><span>正确题数</span></div><div class="stat"><strong id="accuracyStat">0%</strong><span>正确率</span></div><div class="stat"><strong id="wrongStat">0</strong><span>错题 / 未答</span></div></div>
+      <div id="reviewWrap"><h2 class="section-title">错题复盘</h2><p class="sub">建议先看错因，再回忆对应知识点。</p><div id="reviewList" class="review-list"></div></div>
+      <div class="actions"><button class="secondary" id="homeBtn">返回首页</button><button class="primary" id="retryBtn">再测一次 ↻</button></div>
+    </section>
+  </main>
+  <div class="footer">高中基础知识检测 · 用理解巩固记忆</div>
+</div>
+<script>
+const bank = {
+"地理":[
+{topic:"地球运动",q:"北半球夏至日前后，北半球大部分地区通常会出现什么现象？",o:["白昼时间较长","正午太阳高度全年最低","昼夜等长","太阳直射赤道"],a:0,why:"北半球夏至日前后，太阳直射北回归线附近，北半球昼长夜短，且多数地区白昼达到一年中的较长值。",opts:["正确。夏至时北半球昼长夜短，纬度越高昼越长。","错误。北半球夏至时，许多地区正午太阳高度接近一年中的最大值，而非最低。","错误。昼夜等长通常出现在春分、秋分日前后。","错误。夏至时太阳直射点位于北回归线附近，不在赤道。"],knowledge:"记住二分二至：春分、秋分直射赤道；夏至直射北回归线；冬至直射南回归线。北半球夏至昼最长，冬至昼最短。"},
+{topic:"大气与气候",q:"在北半球近地面，风通常会从高气压区吹向低气压区，并受到地转偏向力影响。地转偏向力会使风向怎样偏转？",o:["向右偏转","向左偏转","始终不偏转","只改变风速，不改变风向"],a:0,why:"地球自转造成地转偏向力：北半球向右偏，南半球向左偏；赤道附近地转偏向力很弱。",opts:["正确。北半球运动物体受地转偏向力影响向右偏。","错误。向左偏是南半球的规律。","错误。地转偏向力会改变运动方向。","错误。它主要影响运动方向，不是只影响风速。"],knowledge:"口诀：北右南左，赤道不偏。近地面风还会受水平气压梯度力、摩擦力等共同影响。"},
+{topic:"水循环",q:"海洋水汽输送到陆地上空，凝结降水后，一部分水沿地表流入河流，最终回到海洋。这一过程属于哪种水循环？",o:["海陆间循环","陆地内循环","海上内循环","只有蒸发，没有循环"],a:0,why:"水汽从海洋到陆地，降水落到陆地后通过地表径流等方式回到海洋，连接海洋和陆地，属于海陆间循环。",opts:["正确。海洋蒸发、水汽输送、陆地降水、径流入海是典型环节。","错误。陆地内循环主要发生在陆地内部，水分不必进入海洋。","错误。海上内循环的蒸发和降水主要发生在海洋上。","错误。题干包含水汽输送、降水和径流等多个环节。"],knowledge:"常见水循环环节：蒸发、植物蒸腾、水汽输送、降水、下渗、地表径流、地下径流。海陆间循环能联系海陆并促进物质迁移。"},
+{topic:"地貌与外力作用",q:"河流流出山口后，流速减慢，携带的泥沙逐渐堆积，常形成什么地貌？",o:["冲积扇","峡谷","海蚀崖","冰斗"],a:0,why:"河流流出山口后，地势变缓、流速降低，搬运能力减弱，泥沙在山口附近堆积，常形成扇形的冲积扇。",opts:["正确。冲积扇常见于山地河流出山口处。","错误。峡谷通常与河流强烈下切侵蚀有关。","错误。海蚀崖由海浪侵蚀海岸形成。","错误。冰斗主要由冰川侵蚀形成。"],knowledge:"外力作用辨析：流水侵蚀可形成峡谷；流水堆积可形成冲积扇、冲积平原和三角洲；海浪侵蚀可形成海蚀崖；冰川侵蚀可形成冰斗、U形谷。"},
+{topic:"人口与城市",q:"人口自然增长率通常由哪两个指标共同决定？",o:["出生率和死亡率","迁入率和迁出率","城市化率和就业率","人口密度和面积"],a:0,why:"人口自然增长率等于人口出生率减去人口死亡率。人口迁移会影响地区人口数量变化，但不直接计入自然增长率。",opts:["正确。自然增长率 = 出生率 − 死亡率。","错误。迁入和迁出影响人口机械增长。","错误。这些指标不能直接计算人口自然增长率。","错误。人口密度与面积不能直接得出自然增长率。"],knowledge:"区分自然增长与机械增长：自然增长看出生和死亡；机械增长看迁入和迁出。区域人口总变化同时受两者影响。"},
+{topic:"农业区位",q:"某地夏季高温多雨、雨热同期，适合水稻生长。这里体现的主要农业区位因素是什么？",o:["气候","市场距离","交通条件","土地租金"],a:0,why:"水稻生长需要较充足的热量和水分，夏季高温多雨、雨热同期体现的是气候条件对农业生产的影响。",opts:["正确。热量、降水及其季节配合属于气候因素。","错误。市场影响产品销售与生产类型，但题干强调自然条件。","错误。交通影响运输成本与农产品外运，题干未涉及。","错误。土地租金属于经济因素，题干没有相关信息。"],knowledge:"农业区位因素可分为自然因素（气候、地形、水源、土壤）和人文因素（市场、交通、劳动力、技术、政策等）。"},
+{topic:"工业区位",q:"钢铁工业需要大量铁矿石和煤炭。若运输成本对企业影响很大，工厂选址通常会重点考虑什么？",o:["原料、燃料产地或便利的交通","全年气温最高的地区","人口最少的地区","降水量最大的地区"],a:0,why:"钢铁生产需要大量原料和能源，运输成本高时，靠近原料燃料产地或交通便利地区有利于降低成本。具体选址还要结合市场、技术、环境等因素。",opts:["正确。原料、燃料和交通是传统钢铁工业的重要区位因素。","错误。气温并非钢铁工业选址的首要依据。","错误。人口少不一定有利，劳动力、市场等也需考虑。","错误。降水量通常不是该情境下的核心因素。"],knowledge:"工业区位要综合考虑原料、能源、市场、交通、劳动力、科技、地价、政策和环境等因素，不能只看单一条件。"},
+{topic:"区域发展",q:"区域发展过程中，产业结构从以农业为主逐渐转向工业和服务业比重提高，通常反映了什么？",o:["经济发展阶段和产业结构在变化","区域自然资源一定变多","人口一定持续减少","环境问题一定完全消失"],a:0,why:"随着生产力、技术和市场发展，区域产业结构可能由第一产业占比较高，逐渐转向第二、第三产业比重上升，这是区域经济发展过程中的常见变化。",opts:["正确。产业结构变化是区域经济发展与转型的重要表现。","错误。产业结构变化不代表自然资源储量必然增加。","错误。人口变化受生育、迁移、就业等多种因素影响。","错误。产业升级可能改善环境，但并不意味着环境问题必然消失。"],knowledge:"三次产业：第一产业以农业等为主；第二产业包括采矿、制造、建筑等；第三产业为服务业。产业结构变化需结合区域具体情况分析。"},
+{topic:"天气系统",q:"冷锋过境时，常见的天气变化是？",o:["气温可能下降，可能出现大风和降水","气温必然持续升高且无降水","气压永远保持不变","一定形成持续晴朗天气"],a:0,why:"冷锋是冷气团主动向暖气团移动形成的锋面。过境时常出现风力增大、降水等天气，过境后气温可能下降、气压上升；具体表现与水汽和季节有关。",opts:["正确。大风、降水以及过境后降温是常见表现，但并非每次都完全相同。","错误。冷锋过境后常出现降温，不是必然升温。","错误。锋面过境会伴随气压等要素变化。","错误。冷锋过境时可能有降水和大风。"],knowledge:"冷锋：冷气团推进；暖锋：暖气团推进。判断天气要结合锋前锋后、气团性质和当地水汽条件。"},
+{topic:"地图与定位",q:"在比例尺为 1:100 000 的地图上，图上两地相距 3 厘米，实际水平距离约是多少？",o:["3 千米","300 米","30 千米","300 千米"],a:0,why:"比例尺 1:100 000 表示图上1厘米代表实际100 000厘米，也就是1千米。因此3厘米代表约3千米。",opts:["正确。3 × 1千米 = 3千米。","错误。300米相当于0.3千米，换算少了一个数量级。","错误。30千米比正确值大10倍。","错误。300千米比正确值大100倍。"],knowledge:"先统一单位：100 000厘米 = 1 000米 = 1千米。实际距离 = 图上距离 ÷ 比例尺的分数值（或图上距离 × 比例尺分母）。"}
+],
+"历史":[
+{topic:"史料实证",q:"研究某一历史事件时，哪种做法最有利于提高结论的可靠性？",o:["对照多种来源的史料并分析其背景","只采用一篇没有出处的网络文章","只选择支持自己观点的材料","把后人的评价直接当作当时事实"],a:0,why:"历史研究需要辨析史料的来源、形成时间、作者立场和可信度，并尽可能互证不同材料，避免以偏概全。",opts:["正确。多源互证并结合背景分析，有助于提高判断的可靠性。","错误。来源不明的材料难以核实，不能轻易作为唯一依据。","错误。只挑支持自身观点的材料容易造成偏见。","错误。后人评价属于对历史的解释，不等于事件发生时的直接记录。"],knowledge:"历史学科核心方法包括史料实证、历史解释和时空观念。史料可以相互印证，也需要注意作者立场和材料局限。"},
+{topic:"中国古代政治",q:"中国古代中央集权制度不断发展，其重要目标之一是什么？",o:["加强中央对地方的控制","让地方完全独立于中央","取消所有官僚机构","使各地不再需要法律制度"],a:0,why:"中央集权强调中央与地方关系中中央掌握更强的权力。历代制度安排虽有变化，但加强对地方的管理是其重要目标之一。",opts:["正确。中央集权的重要特征是中央对地方的控制力增强。","错误。地方完全独立与中央集权的含义相反。","错误。中央集权通常通过官僚机构实施管理，并非取消官僚机构。","错误。制度建设一般涉及法律和行政规范，不意味着废除法律。"],knowledge:"区分君主专制与中央集权：君主专制主要涉及君主与官僚、权力决策关系；中央集权主要涉及中央与地方关系。"},
+{topic:"中国古代经济",q:"古代农业社会中，铁制农具和牛耕的推广通常带来什么影响？",o:["提高农业生产效率","使农业完全不再依赖自然条件","立刻消除所有社会差异","使手工业和商业立即消失"],a:0,why:"铁制农具和牛耕可以改善耕作能力、提高劳动效率，对农业生产发展具有推动作用，但其效果会受地区、技术和社会条件限制。",opts:["正确。生产工具改进有助于提高耕作效率和土地利用水平。","错误。农业仍受气候、水源、土壤等自然条件影响。","错误。生产力进步不意味着社会差异立即消失。","错误。农业发展并不意味着手工业和商业消失。"],knowledge:"分析经济史要关注生产工具、生产技术、土地制度、劳动关系、市场与交通等因素之间的联系。"},
+{topic:"近代中国",q:"鸦片战争后，中国社会逐渐发生深刻变化。通常认为它是中国近代史的开端，主要原因是什么？",o:["中国开始沦为半殖民地半封建社会","中国当时立即实现了工业化","中国从此不再受到外部影响","中国传统社会结构在战争结束时完全消失"],a:0,why:"鸦片战争及其后的一系列不平等条约，使中国主权受到破坏，社会性质开始发生深刻变化，因此通常被视为中国近代史的开端。",opts:["正确。战争后中国的主权、经济和社会结构受到持续冲击。","错误。鸦片战争并未使中国立即实现工业化。","错误。近代中国受到外部势力影响显著增强。","错误。社会结构变化是长期过程，并非战争结束时立即完全消失。"],knowledge:"历史事件的影响往往是多方面、渐进的。回答“开端”类问题时，要抓住社会性质、政治格局或发展方向发生的关键变化。"},
+{topic:"辛亥革命",q:"辛亥革命的重要历史意义之一是什么？",o:["结束了中国两千多年的君主专制制度","立即解决了中国所有社会问题","建立了长期稳定且覆盖全国的民主制度","使中国完全摆脱列强控制"],a:0,why:"辛亥革命推翻清王朝统治，结束了延续两千多年的君主专制制度，推动了民主共和观念传播；但革命后中国仍面临政治动荡和外部压力。",opts:["正确。这是辛亥革命最重要的历史意义之一。","错误。土地、民生、国家独立等问题并未因此全部解决。","错误。革命后政局并不稳定，民主政治实践存在局限。","错误。列强在华势力并未因辛亥革命立即消失。"],knowledge:"评价历史事件要同时分析进步性与局限性，避免把重大事件的意义夸大为“解决一切问题”。"},
+{topic:"新文化运动",q:"新文化运动前期的重要主张常概括为“民主”与“科学”，这反映了什么？",o:["知识分子对旧思想和旧礼教的反思","主张恢复所有传统制度","强调完全拒绝一切现代知识","主张取消教育和学术研究"],a:0,why:"新文化运动倡导民主与科学，批判旧礼教和旧思想，推动思想解放，并促进新思想传播。其内部观点多样，历史影响也需结合时代背景理解。",opts:["正确。反思旧思想、倡导民主科学是其重要特征。","错误。运动总体上对许多传统思想和礼教提出批判。","错误。科学正是运动倡导的重要理念之一。","错误。运动推动思想文化讨论，并非取消教育和学术。"],knowledge:"理解思想解放运动要结合时代危机、知识分子诉求、传播媒介及其对社会观念的影响。"},
+{topic:"世界史·工业革命",q:"第一次工业革命的重要标志之一是什么？",o:["机器生产逐步取代手工劳动成为重要生产方式","农业完全消失","互联网开始普及","全球所有国家同时完成工业化"],a:0,why:"第一次工业革命以蒸汽机等技术革新和机器生产发展为重要特征，生产组织方式与社会经济结构随之改变。",opts:["正确。机器生产的发展是工业革命的关键特征。","错误。农业仍然存在，并持续为社会提供基础产品。","错误。互联网属于更晚近的信息技术发展。","错误。工业化在不同国家发生的时间和程度并不相同。"],knowledge:"工业革命不仅是技术变化，也影响工厂制度、城市化、阶级结构、交通运输和世界市场。"},
+{topic:"世界史·启蒙运动",q:"启蒙运动中的许多思想家强调理性、权利和对专制权力的限制。这些思想对近代政治产生了什么影响？",o:["为近代民主政治和权利观念提供思想资源","要求社会停止科学研究","主张所有国家恢复封建等级制度","直接消除了世界各地的不平等"],a:0,why:"启蒙思想批判专制与特权，讨论自然权利、社会契约、权力制衡等问题，对近代革命和政治制度发展产生了重要影响，但实际落实经历了复杂过程。",opts:["正确。启蒙思想为民主、法治和权利观念提供了重要理论资源。","错误。启蒙运动重视理性和科学，不是反对研究。","错误。许多启蒙思想家批判封建特权和专制。","错误。思想影响深远，但不平等并未因此立即消失。"],knowledge:"常见启蒙思想关键词：理性、自由、平等、自然权利、社会契约、分权制衡。不同思想家主张并不完全相同。"},
+{topic:"世界史·两次世界大战",q:"第一次世界大战后建立的国际联盟，主要希望通过什么方式维护国际和平？",o:["国际合作与集体安全","鼓励各国无限制扩张军备","取消一切国家间外交","由单一国家永久统治世界"],a:0,why:"国际联盟成立的宗旨之一是促进国际合作、维护和平与安全。但其制度设计和执行能力存在局限，未能阻止第二次世界大战爆发。",opts:["正确。国际合作和集体安全是国联的重要理念。","错误。无限制扩军与维护和平的目标相冲突。","错误。国联本身就是一种国际组织和外交合作机制。","错误。国联并非要建立单一国家统治世界。"],knowledge:"评价国际组织需区分宗旨与实际效果：组织目标可能积极，但执行机制、成员参与和大国态度会影响实际成效。"},
+{topic:"历史解释",q:"分析一个历史事件的原因时，哪种方法更合理？",o:["综合政治、经济、社会和思想等因素","只用一个原因解释所有现象","只根据今天的价值观判断当时的人","忽略事件发生的时代背景"],a:0,why:"重大历史事件通常由多种因素共同推动。分析时应区分根本原因、直接原因、背景和导火线，并结合当时的社会条件。",opts:["正确。多角度分析更有助于理解历史事件的复杂性。","错误。单一因素往往无法解释复杂历史现象。","错误。需要尽量理解当时的制度、观念和处境，避免脱离时代。","错误。时代背景是解释历史事件的重要基础。"],knowledge:"历史因果分析可分层：长期背景、深层原因、直接原因、导火线；具体题目要根据材料和设问判断。"}
+],
+"生物":[
+{topic:"细胞结构",q:"下列哪种细胞结构是大多数真核细胞进行有氧呼吸的主要场所？",o:["线粒体","核糖体","高尔基体","中心体"],a:0,why:"线粒体是多数真核细胞进行有氧呼吸的重要场所，细胞通过相关代谢过程释放能量并合成ATP。原核细胞没有线粒体。",opts:["正确。线粒体内膜及基质中分布着有氧呼吸相关酶系。","错误。核糖体主要负责蛋白质合成。","错误。高尔基体主要参与蛋白质加工、分类和运输等。","错误。中心体主要与动物细胞及某些低等植物细胞的细胞分裂有关。"],knowledge:"细胞器速记：线粒体—有氧呼吸；核糖体—蛋白质合成；高尔基体—加工和运输；叶绿体—光合作用（存在于植物等部分真核细胞）。"},
+{topic:"细胞膜",q:"细胞膜能够控制物质进出细胞，这主要与它的什么特点有关？",o:["具有选择透过性","对所有物质完全不透","所有物质都能自由通过","细胞膜只由核酸构成"],a:0,why:"细胞膜以磷脂双分子层为基本支架，并含有多种蛋白质，能对不同物质的跨膜运输进行选择和调节。",opts:["正确。选择透过性与膜结构、转运蛋白及物质性质有关。","错误。水和某些物质能够通过细胞膜，细胞也需要进行物质交换。","错误。不同物质通过细胞膜的方式和难易程度不同。","错误。细胞膜主要由脂质和蛋白质构成，还含有少量糖类等，不是只由核酸构成。"],knowledge:"跨膜运输包括自由扩散、协助扩散和主动运输等；判断方式时关注是否需要载体、是否消耗能量以及物质浓度梯度。"},
+{topic:"酶",q:"酶在细胞代谢中的主要作用是什么？",o:["降低化学反应所需的活化能","为所有反应提供全部能量","使反应产物的种类必然改变","反应结束后一定被永久消耗"],a:0,why:"酶是生物催化剂，能够降低化学反应的活化能，从而提高反应速率；酶本身不提供反应所需的全部能量，也不决定反应的平衡方向。",opts:["正确。降低活化能是酶催化作用的关键。","错误。酶不是能量来源，细胞能量转换与ATP等有关。","错误。酶通常改变反应速率，不会任意改变反应产物种类。","错误。酶在反应前后通常不被消耗，可重复发挥作用，但可能因条件不适而失活。"],knowledge:"酶的特性：高效性、专一性，作用条件较温和；温度和pH会影响酶活性，过高温度或极端pH可能导致酶空间结构改变。"},
+{topic:"光合作用",q:"植物进行光合作用时，光反应阶段直接依赖什么条件？",o:["光照","完全黑暗","只需要氧气，不需要光","只在根细胞中进行"],a:0,why:"光反应发生在叶绿体类囊体膜上，需要光能驱动相关过程，形成ATP和NADPH，并伴随水的光解和氧气释放。",opts:["正确。光反应需要光能。","错误。完全黑暗下无法正常进行光反应。","错误。氧气不是替代光能的条件。","错误。光合作用主要在含叶绿体的绿色植物细胞中进行，根细胞通常不进行光合作用。"],knowledge:"光反应：吸收光能，形成ATP和NADPH并释放氧气；暗反应（碳反应）利用ATP、NADPH固定和还原二氧化碳。暗反应不等于只能在黑暗中进行。"},
+{topic:"细胞呼吸",q:"细胞呼吸中，葡萄糖等有机物被分解并释放能量。细胞可直接利用的主要能量载体是？",o:["ATP","DNA","纤维素","抗体"],a:0,why:"ATP能通过末端磷酸基团水解等过程释放可供细胞利用的能量，是细胞中重要的直接能源物质。",opts:["正确。ATP是细胞生命活动常用的直接能源物质。","错误。DNA主要储存遗传信息，不是直接能源载体。","错误。纤维素是植物细胞壁的重要组成成分。","错误。抗体属于免疫相关蛋白质，不是直接能源载体。"],knowledge:"ATP由腺嘌呤、核糖和三个磷酸基团等组成。细胞通过呼吸作用等过程合成ATP，再用于主动运输、合成反应、运动等生命活动。"},
+{topic:"遗传基础",q:"在DNA分子中，腺嘌呤（A）通常与哪一种碱基配对？",o:["胸腺嘧啶（T）","尿嘧啶（U）","胞嘧啶（C）","鸟嘌呤（G）"],a:0,why:"DNA的互补碱基配对规律是A与T配对、G与C配对。RNA中通常以U代替T，因此不能把RNA的配对规则直接套用到DNA。",opts:["正确。DNA中A—T、G—C互补配对。","错误。尿嘧啶通常存在于RNA中，DNA中对应位置通常是胸腺嘧啶。","错误。C与G配对。","错误。G与C配对，不与A配对。"],knowledge:"口诀：DNA里 A-T、G-C；RNA里常见 A-U。注意题目问的是DNA还是RNA。"},
+{topic:"细胞分裂",q:"有丝分裂过程中，染色体着丝粒分裂、姐妹染色单体分开，主要发生在哪个时期？",o:["后期","前期","中期","末期"],a:0,why:"有丝分裂后期，着丝粒分裂，姐妹染色单体分开并在纺锤丝牵引下移向细胞两极。",opts:["正确。着丝粒分裂和姐妹染色单体分离是后期的典型特征。","错误。前期主要出现染色体、纺锤体等结构变化。","错误。中期染色体通常排列在细胞中央的赤道板附近。","错误。末期染色体到达两极，核膜、核仁等逐渐恢复。"],knowledge:"有丝分裂顺序：前期—中期—后期—末期。记忆：前期显形，中期排队，后期分开，末期重建。"},
+{topic:"稳态与调节",q:"人体在寒冷环境中，为减少热量散失，皮肤血管通常会怎样变化？",o:["收缩，使皮肤血流量减少","舒张，使皮肤血流量增加","全部停止血液循环","转变为进行光合作用"],a:0,why:"寒冷时，皮肤血管收缩可减少皮肤血流量，降低热量向外散失；同时骨骼肌可能发生战栗等产热反应。",opts:["正确。皮肤血管收缩有助于减少散热。","错误。皮肤血管舒张通常会增加皮肤血流量，有利于散热。","错误。血液循环不会全部停止。","错误。人体不进行光合作用。"],knowledge:"体温调节通过神经和体液等调节机制维持相对稳定。寒冷时可减少散热、增加产热；炎热时通常增加散热。"},
+{topic:"生态系统",q:"在生态系统中，绿色植物通常属于什么成分？",o:["生产者","消费者","分解者","非生物环境"],a:0,why:"绿色植物可以通过光合作用将无机物合成为有机物，为生态系统提供有机物和能量来源，因此通常属于生产者。",opts:["正确。生产者主要包括能进行光合作用或化能合成作用的生物。","错误。消费者通常通过摄食其他生物获取有机物。","错误。分解者主要分解动植物遗体和排遗物中的有机物。","错误。植物是生物成分，不属于非生物环境。"],knowledge:"生态系统生物成分通常包括生产者、消费者和分解者；非生物环境包括阳光、水、空气、温度和无机盐等。"},
+{topic:"生物多样性与进化",q:"自然选择学说认为，生物种群中有利变异的频率在一定环境下可能逐渐增加，主要原因是什么？",o:["具有有利变异的个体更可能生存并留下后代","生物会因为需要而定向产生所需变异","所有个体都具有完全相同的遗传信息","环境变化会立刻让每个个体获得相同性状"],a:0,why:"在特定环境中，某些可遗传变异可能提高个体的生存和繁殖成功率。携带这些变异的个体更可能留下后代，相关遗传变异在种群中的频率可能逐代上升。",opts:["正确。自然选择通过不同个体生存和繁殖成功率的差异发挥作用。","错误。变异并非因为生物有需要才定向产生；自然选择作用于已有变异。","错误。种群个体之间存在遗传差异。","错误。环境不会让所有个体立刻获得相同性状，进化通常发生在种群层面并跨越世代。"],knowledge:"区分变异与选择：变异提供差异，自然选择改变种群中可遗传变异的频率。进化通常指种群遗传组成随世代发生变化。"}
+]
+};
+
+let subject="地理", selectedCount=5, questions=[], index=0, chosen=null, results=[], locked=false;
+const $=id=>document.getElementById(id);
+document.querySelectorAll(".subject-card").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".subject-card").forEach(x=>x.classList.remove("selected"));
+ btn.classList.add("selected"); subject=btn.dataset.subject;
+}));
+document.querySelectorAll(".countbtn").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".countbtn").forEach(x=>x.classList.remove("active"));
+ btn.classList.add("active"); selectedCount=btn.dataset.count==="all"?"all":Number(btn.dataset.count);
+}));
+function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
+function startQuiz(){
+ const pool=shuffle(bank[subject]); questions=selectedCount==="all"?pool:pool.slice(0,Math.min(selectedCount,pool.length));
+ index=0;chosen=null;results=[];locked=false;
+ $("home").classList.add("hidden");$("result").classList.add("hidden");$("quiz").classList.remove("hidden");renderQuestion();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function renderQuestion(){
+ const q=questions[index];chosen=null;locked=false;
+ $("progressText").textContent=`第 ${index+1} / ${questions.length} 题`;
+ $("progressFill").style.width=`${index/questions.length*100}%`;
+ $("subjectPill").textContent=subject;$("topicPill").textContent=q.topic;$("answeredPill").textContent="待作答";
+ $("questionText").textContent=q.q;$("feedback").className="feedback hidden";$("feedback").innerHTML="";
+ $("submit").classList.remove("hidden");$("submit").disabled=true;$("next").classList.add("hidden");$("skip").classList.remove("hidden");
+ const letters=["A","B","C","D"];
+ $("options").innerHTML=q.o.map((text,i)=>`<button class="option" data-index="${i}"><span class="letter">${letters[i]}</span><span>${text}</span></button>`).join("");
+ document.querySelectorAll(".option").forEach(btn=>btn.addEventListener("click",()=>{
+  if(locked)return;chosen=Number(btn.dataset.index);
+  document.querySelectorAll(".option").forEach(x=>x.classList.toggle("chosen",Number(x.dataset.index)===chosen));
+  $("submit").disabled=false;
+ }));
+}
+function submitAnswer(isSkip=false){
+ if(locked)return;
+ const q=questions[index];locked=true;
+ const userAnswer=isSkip?null:chosen;const correct=userAnswer===q.a;
+ results[index]={q,userAnswer,correct,skipped:isSkip};
+ $("answeredPill").textContent=isSkip?"已跳过":(correct?"回答正确":"回答错误");
+ document.querySelectorAll(".option").forEach((btn,i)=>{
+  btn.disabled=true;btn.classList.remove("chosen");
+  if(i===q.a)btn.classList.add("correct");
+  else if(i===userAnswer&&!correct)btn.classList.add("wrong");
+ });
+ const feedback=$("feedback");feedback.className="feedback "+(correct?"good":"bad");
+ const letters=["A","B","C","D"];
+ const headline=correct?"回答正确！":(isSkip?"本题已跳过":"这题答错了，来看看原因");
+ feedback.innerHTML=`<h3>${headline}</h3><p><span class="label">正确答案：</span>${letters[q.a]}. ${q.o[q.a]}</p>${!correct&&!isSkip?`<p><span class="label">你的选择：</span>${letters[userAnswer]}. ${q.o[userAnswer]}</p>`:""}<p class="explain-title"><span class="label">详细解析</span></p><p>${q.why}</p><div class="analysis-grid">${q.opts.map((t,i)=>`<div class="analysis-item"><b>${letters[i]}.</b>${t}</div>`).join("")}</div><p class="explain-title"><span class="label">知识点归纳：</span>${q.knowledge}</p>`;
+ $("submit").classList.add("hidden");$("skip").classList.add("hidden");$("next").classList.remove("hidden");
+ $("next").textContent=index===questions.length-1?"查看检测结果 →":"下一题 →";
+ $("progressFill").style.width=`${(index+1)/questions.length*100}%`;
+}
+function nextQuestion(){if(!locked)return;if(index<questions.length-1){index++;renderQuestion();}else showResult();}
+function showResult(){
+ $("quiz").classList.add("hidden");$("result").classList.remove("hidden");
+ const correct=results.filter(r=>r&&r.correct).length,wrong=results.length-correct;
+ $("scoreStat").textContent=correct;$("accuracyStat").textContent=Math.round(correct/questions.length*100)+"%";$("wrongStat").textContent=wrong;
+ $("resultSubtitle").textContent=`${subject} · 共 ${questions.length} 题 · 已完成`;
+ const mistakes=results.filter(r=>!r.correct);
+ if(!mistakes.length){$("reviewWrap").innerHTML=`<h2 class="section-title">错题复盘</h2><div class="empty">太棒了！本次没有错题，建议稍后再测一次巩固记忆。</div>`;}
+ else $("reviewList").innerHTML=mistakes.map((r,i)=>`<article class="review-item"><h4>${i+1}. ${r.q.q}</h4><p>你的答案：${r.userAnswer===null?"未作答":r.q.o[r.userAnswer]}</p><p class="ans">正确答案：${r.q.o[r.q.a]}</p><p><b>解析：</b>${r.q.why}</p><p><b>知识点：</b>${r.q.knowledge}</p></article>`).join("");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+$("start").addEventListener("click",startQuiz);
+$("submit").addEventListener("click",()=>submitAnswer(false));
+$("skip").addEventListener("click",()=>submitAnswer(true));
+$("next").addEventListener("click",nextQuestion);
+$("quit").addEventListener("click",()=>{if(confirm("返回选科会结束本次检测，确定返回吗？")){$("quiz").classList.add("hidden");$("home").classList.remove("hidden");}});
+$("homeBtn").addEventListener("click",()=>{$("result").classList.add("hidden");$("home").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});});
+$("retryBtn").addEventListener("click",startQuiz);
+</script>
+</body>
+</html>
